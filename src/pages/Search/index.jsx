@@ -1,14 +1,14 @@
-import './styles.css';
+import "./styles.css";
 
-import { useNavigate } from 'react-router-dom';
-import { SelectCity } from '../../components/SelectCity';
+import { useNavigate } from "react-router-dom";
+import { SelectCity } from "../../components/SelectCity";
 
 export function Search() {
   const navigate = useNavigate();
 
   function handleSelected(city) {
-    localStorage.setItem('@typewheather:city', JSON.stringify(city));
-    navigate('/dashboard');
+    localStorage.setItem("@typewheather:city", JSON.stringify(city));
+    navigate("/dashboard");
   }
 
   return (
@@ -16,7 +16,9 @@ export function Search() {
       <img src="logo_large.svg" alt="Logo" />
 
       <main>
-        <h1>Boas vindas ao <strong>TypeWeather</strong></h1>
+        <h1>
+          Boas vindas ao <strong>TypeWeather</strong>
+        </h1>
         <span>Escolha um local para ver a previsão do tempo</span>
 
         <SelectCity onSelect={handleSelected} />
