@@ -2,10 +2,43 @@ import dayjs from "dayjs";
 
 import { api } from "./api";
 import { getNextDays } from "../utils/getNextDays";
-import { weatherIcons } from "../utils/weatherIcons";
+import { weatherIcons, WeatherIconsKeysProps } from "../utils/weatherIcons";
 
-export async function getWeatherByCity({ latitude, longitude }) {
-  const { data } = await api.get(`/forecast?lat=${latitude}&lon=${longitude}`);
+interface GetWeatherByCityProps {
+  latitude: number;
+  longitude: number;
+};
+
+
+export interface WeatherAPIResponseProps {
+  list: {
+    pop: number;
+    main: {
+      temp: number;
+      temp_min: number;
+      temp_max: number;
+      feels_like: number;
+      humidity: number;
+      temp_kf: number;
+    };
+    wind: {
+      speed: number;
+      deg: number;
+    };
+    weather: {
+      main: WeatherIconsKeysProps;
+      description: string;
+    }[];
+  }[];
+}
+
+
+
+export async function getWeatherByCity({ latitude, longitude }: GetWeatherByCityProps) {
+  const { data } = await api.get<WeatherAPIResponseProps>(`/forecast?lat=${latitude}&lon=${longitude}`);
+  console.log(data);
+
+
   const { main, weather, wind, pop } = data.list[0];
 
   const today = {

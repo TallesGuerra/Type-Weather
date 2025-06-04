@@ -12,6 +12,7 @@ export interface CityAPIResponse {
 	name: string;
 	sys: {
 		country?: string;
+
 	};
 	coord: {
 		lat: number;
@@ -23,7 +24,7 @@ export interface CityAPIResponse {
 export async function getCityByNameService(name: string): Promise<CityProps[]> {
 	try {
 		const { data } = await api.get<CityAPIResponse>(`/weather?q=${name}`);
-		console.log(data);
+
 
 		const city = {
 			id: data.id,
