@@ -7,17 +7,11 @@ import cloudRainLight from '../../assets/svg/cloud_rain_light.svg';
 import thermometerSimpleLight from '../../assets/svg/thermometer_simple_light.svg';
 
 import { WeatherItem } from '../WeatherItem';
+import { WeatherDetailResponseProps } from '../../services/getWeatherByCity';
 
-export interface DetailsProps {
-  feels_like: number;
-  probability: number;
-  wind_speed: number;
-  humidity: number;
-  temp_kf: number;
-}
 
 interface Props {
-  data: DetailsProps;
+  data: WeatherDetailResponseProps;
 }
 
 
