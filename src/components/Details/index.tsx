@@ -8,7 +8,20 @@ import thermometerSimpleLight from '../../assets/svg/thermometer_simple_light.sv
 
 import { WeatherItem } from '../WeatherItem';
 
-export function Details({ data }) {
+export interface DetailsProps {
+  feels_like: number;
+  probability: number;
+  wind_speed: number;
+  humidity: number;
+  temp_kf: number;
+}
+
+interface Props {
+  data: DetailsProps;
+}
+
+
+export function Details({ data }: Props) {
   return (
     <section className='weather-detail'>
       <h1>Detalhes do clima hoje</h1>
