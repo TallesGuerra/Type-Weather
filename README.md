@@ -18,7 +18,7 @@
 
 O Type-Weather é um projeto desenvolvido com o objetivo de praticar e implementar conceitos de TypeScript em um aplicativo de previsão do tempo. Ele demonstra a utilização de TypeScript para criar uma aplicação robusta e escalável, focando na tipagem de dados e na organização do código.
 
-![Screenshot do Type-Weather] (<img alt="Preview Image" src="/src/assets/img/preview.png">)
+<img alt="Preview Image" src="/src/assets/img/preview.png">
 
 ## 💻 Tecnologias
 
