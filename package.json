@@ -8,8 +8,7 @@
     "dev": "tsc && vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "tsc && vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "preview": "tsc && vite preview"
   },
   "dependencies": {
     "axios": "^1.4.0",
