@@ -3,6 +3,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/Type-Weather/', // 👈 MUITO IMPORTANTE
+  base: '/Type-Weather/',
   plugins: [react()],
+  build: {
+    cssCodeSplit: false
+  }
 })
